@@ -26,7 +26,7 @@
 
         /** URL for earthquake data from the guardian dataset */
         private static final String GUARDIAN_REQUEST_URL =
-                "https://content.guardianapis.com/search?api-key=1205bd93-b6c3-4f90-9eac-eba3ff2c2b02";
+                "https://content.guardianapis.com/search?&show-tags=contributor&api-key=1205bd93-b6c3-4f90-9eac-eba3ff2c2b02";
 
         private static final int NEWS_LOADER_ID = 1;
 

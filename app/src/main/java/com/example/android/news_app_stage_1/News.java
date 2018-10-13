@@ -14,11 +14,18 @@
         /** Website URL of the news article */
         private String mUrl;
 
-        public News(String sectionName, String webTitle, String date, String url) {
+        /** Author of the article */
+        private String mAuthor;
+
+
+
+        public News(String sectionName, String webTitle, String date, String url, String author) {
             mSectionName = sectionName;
             mWebTitle = webTitle;
             mDate = date;
             mUrl = url;
+            mAuthor = author;
+
         }
 
         /**
@@ -46,4 +53,10 @@
         public String getUrl() {
             return mUrl;
         }
+
+        /**
+         * Returns the name of the author of the article.
+         */
+        public String getAuthor(){return mAuthor;}
+
     }

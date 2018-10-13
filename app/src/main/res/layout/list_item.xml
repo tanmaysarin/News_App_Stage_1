@@ -10,7 +10,7 @@
         android:paddingStart="16dp">
 
         <TextView
-            android:id="@+id/artivleType"
+            android:id="@+id/articleType"
             android:layout_width="60dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
@@ -54,10 +54,19 @@
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="end"
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
                 tools:text="Mar 6, 2010" />
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                tools:text="by author"/>
 
 
 

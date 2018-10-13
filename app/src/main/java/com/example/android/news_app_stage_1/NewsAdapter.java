@@ -32,13 +32,18 @@
             // Find the news article at the given position in the list of earthquakes
             News currentNewsItem = getItem(position);
 
-            TextView nameView = (TextView) listItemView.findViewById(R.id.artivleType);
+            TextView nameView = (TextView) listItemView.findViewById(R.id.articleType);
             nameView.setText(currentNewsItem.getName());
 
             // Find the TextView with view ID location
             TextView primaryLocationView = (TextView) listItemView.findViewById(R.id.primary_location);
             // Display the location of the current earthquake in that TextView
             primaryLocationView.setText(currentNewsItem.getWebTitle());
+
+            TextView authorView = (TextView) listItemView.findViewById(R.id.author);
+            authorView.setText(currentNewsItem.getAuthor());
+
+
 
             // Find the TextView with view ID location offset
             TextView locationOffsetView = (TextView) listItemView.findViewById(R.id.date);

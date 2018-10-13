@@ -165,9 +165,46 @@
                     // Extract the value for the key called "url"
                     String url = currentNews.getString("webUrl");
 
+                    // create a StringBuilder for news article author(s)
+                    StringBuilder author = new StringBuilder ( "By: " );
+
+                    // extract the JSONArray associated with the key called "tags"
+                    JSONArray authorArray = currentNews.getJSONArray ( "tags" );
+
+                    // determine if the authorArray is not null and length is greater than 0 in order
+                    // to display a list of author(s)
+                    if (authorArray != null && authorArray.length () > 0) {
+
+                        // for each author list them accordingly
+                        for (int j = 0; j < authorArray.length (); j++) {
+
+                            // get a single author at position j within the list of author(s)
+                            JSONObject authors = authorArray.getJSONObject ( j );
+
+                            // extract the value associated with the key called "webTitle"
+                            String authorsListed = authors.optString ( "webTitle" );
+
+                            // if the authorArray is not null and length is greater than 1, then
+                            // list all authors separated by tabs
+                            if (authorArray.length () > 1) {
+                                author.append ( authorsListed );
+                                author.append ( "\t\t\t" );
+
+                                // if there is only 1 author, then list just that author
+                            } else {
+                                author.append ( authorsListed );
+                            }
+                        }
+                        // if there are no authors within the authorsArray, then state "No author(s) listed"
+                    } else {
+                        author.replace ( 0, 3, "No author(s) listed" );
+                    }
+
+
+
                     // Create a new {@link Earthquake} object with the magnitude, webTitle, date,
                     // and url from the JSON response.
-                    News newsItem = new News(sectionName, webTitle, date, url);
+                    News newsItem = new News(sectionName, webTitle, date, url, author.toString());
 
                     // Add the new {@link Earthquake} to the list of newsItem.
                     news.add(newsItem);
