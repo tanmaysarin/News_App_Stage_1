@@ -4,10 +4,17 @@ The nanodegree news app project asks students to use the Guardian News API to fe
 
 Part 1 of this project utilizes the following:
 
-Loaders
+Loaders 
+
 AsyncTasks
+
 Parsing JSON data - displays article title, author, date, and section
+
 Date formatting for readability (such as Oct 5, 2018)
+
 Intents to web browser
+
+
 Loading indicator
+
 Response messages for no internet connection or no data to load
